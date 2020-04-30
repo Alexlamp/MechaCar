@@ -1,0 +1,93 @@
+##MPG Regression
+
+Data Correlations:
+
+                 vehicle length vehicle weight spoiler angle  ground clearance     AWD         mpg
+vehicle length       1.00000000    -0.12271790    0.02577114  -0.31663112   0.08565668   0.60947984
+vehicle weight      -0.12271790     1.00000000   -0.11307851  0.08511338    -0.03698098  0.09068314
+spoiler angle        0.02577114    -0.11307851    1.00000000  -0.21112057   -0.09120266 -0.02083999
+ground clearance    -0.31663112     0.08511338   -0.21112057  1.00000000    -0.15214456  0.32874886
+AWD                  0.08565668    -0.03698098   -0.09120266  -0.15214456   1.00000000  -0.14166977
+mpg                  0.60947984     0.09068314   -0.02083999  0.32874886    -0.14166977  1.00000000
+                 
+ Residuals:
+     Min       1Q   Median       3Q      Max 
+-19.4701  -4.4994  -0.0692   5.4433  18.5849 
+
+Coefficients:
+                     Estimate Std. Error t value Pr(>|t|)    
+(Intercept)        -1.040e+02  1.585e+01  -6.559 5.08e-08 ***
+ vehicle length     6.267e+00  6.553e-01   9.563 2.60e-12 ***
+ vehicle weight     1.245e-03  6.890e-04   1.807   0.0776 .  
+ spoiler angle      6.877e-02  6.653e-02   1.034   0.3069    
+ ground clearance   3.546e+00  5.412e-01   6.551 5.21e-08 ***
+ AWD                -3.411e+00  2.535e+00  -1.346   0.1852    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 8.774 on 44 degrees of freedom
+Multiple R-squared:  0.7149,	Adjusted R-squared:  0.6825 
+F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11          
+
+
+Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset?
+   
+    Assuming a significance level of 0.05, vehicle length and ground clearance variables provided a non-random amount of variance.
+
+
+Is the slope of the linear model considered to be zero? Why or why not?
+
+    Our p-value is 5.35e-11 and smaller than the assumed significance level of 0.05. The slope of our linear model is therefore not zero, and we reject our null hypothesis.
+
+
+Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?
+    Our R-sqared value is 0.7149, therefore significant; however, our p-value is smaller than the assumed significance level of 0.05 leaving us to believe there may be other variables contributing to the variation in the car's MPG. This model is not an ideal predictor. 
+
+
+
+##Suspension Coil Summary:
+
+PSI      
+Min.    1452  
+1st Qu. 1498  
+Median  1500  
+Mean    1499  
+3rd Qu. 1501  
+Max.    1542  
+Var.    62.29356
+SD.     7.892627
+
+
+
+Does the current manufacturing data meet this design specification? Why or why not?
+
+    Yes, because the variance is 62.29 and the specifications state that the Suspension coils must not exceed 100 PSI.
+
+
+##Suspension Coil t Test:
+
+One Sample t-test
+
+data:  coil_table$PSI
+t = -1.8931, df = 149, p-value = 0.06028
+alternative hypothesis: true mean is not equal to 1500
+95 percent confidence interval:
+ 1497.507 1500.053
+sample estimates:
+mean of x 
+  1498.78 
+
+The suspension coil’s PSI results are not statistically different from the mean
+population results of 1,500
+
+
+## Statistical Study Design
+
+In order to further discover the consumer's preferences, we can dig deeper into the metrics that may influence customer's buying decison. A very important factor is the color of the car. 
+
+ What colot of car do you prefer (white, back, red, blue)?
+    I hypothesize that there will be a certain color that is more popular than the rest.
+    Null hypothesis - there is no significant preference in car color
+    Chi-squared Test
+
+I will research national data on the most popular colors for cars. These colors will be the colors that I use for my survey. I will collect the data from the customers on their preference for MechaCar colors to determine if customers like certain ones.
